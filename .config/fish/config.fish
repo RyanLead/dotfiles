@@ -11,6 +11,7 @@ if status is-interactive
     alias cat='bat'
     alias grep='rg'
     alias paru='paru --skipreview'
+    alias vim='nvim'
 
     # Dotfiles function (persisted via funcsave normally, but fine here too)
     function dotfiles
@@ -25,6 +26,7 @@ end
 
 # Environment
 set -gx EDITOR nvim
+set -gx VISUAL nvim
 set -gx TERM xterm-kitty
 
 starship init fish | source
