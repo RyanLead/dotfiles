@@ -22,7 +22,7 @@ hl.monitor({
 })
 
 --DEFAULTS--
-local terminal    = "alacritty"
+local terminal    = "kitty"
 local fileManager = "dolphin"
 local menu        = "hyprlauncher"
 
