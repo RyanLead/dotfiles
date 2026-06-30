@@ -1,6 +1,5 @@
 if status is-interactive
-    # Remove greeting
-    set -g fish_greeting
+    fastfetch
 
     # Better history search (up arrow = prefix search)
     bind \e\[A history-search-backward
