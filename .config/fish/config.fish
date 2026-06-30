@@ -1,7 +1,31 @@
-source /usr/share/cachyos-fish-config/cachyos-config.fish
+if status is-interactive
+    # Remove greeting
+    set -g fish_greeting
 
-# overwrite greeting
-# potentially disabling fastfetch
-#function fish_greeting
-#    # smth smth
-#end
+    # Better history search (up arrow = prefix search)
+    bind \e\[A history-search-backward
+    bind \e\[B history-search-forward
+
+    # Aliases
+    alias ls='eza --icons --group-directories-first'
+    alias ll='eza -la --icons --group-directories-first'
+    alias cat='bat'
+    alias grep='rg'
+    alias paru='paru --skipreview'
+
+    # Dotfiles function (persisted via funcsave normally, but fine here too)
+    function dotfiles
+        git --git-dir=$HOME/.dotfiles --work-tree=$HOME $argv
+    end
+
+    # Useful for CachyOS/paru workflows
+    function update
+        paru -Syu
+    end
+end
+
+# Environment
+set -gx EDITOR nvim
+set -gx TERM xterm-kitty
+
+starship init fish | source
