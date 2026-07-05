@@ -24,13 +24,12 @@ hl.monitor({
 -- DEFAULTS --
 local terminal    = "kitty"
 local fileManager = "dolphin"
-local menu        = "hyprlauncher"
+local menu        = "rofi -show drun"
 
 -- AUTOSTART --
 hl.on("hyprland.start", function()
     hl.dispatch(hl.dsp.exec_cmd("waybar"))
     hl.dispatch(hl.dsp.exec_cmd("swaybg -c 000000"))
-    hl.dispatch(hl.dsp.exec_cmd("hyprlauncher -d"))
 end)
 
 -- ENVIRONMENT VARIABLES --

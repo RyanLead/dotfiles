@@ -1,0 +1,113 @@
+/**
+ * Dracula theme for rofi, matched to this system's kitty/waybar/Hyprland palette.
+ */
+
+* {
+    bg           : #282a36ff;
+    bg-alt       : #21222cff;
+    bg-selected  : #44475aff;
+    fg           : #f8f8f2ff;
+    fg-alt       : #6272a4ff;
+    accent       : #bd93f9ff;
+    accent-alt   : #ff79c6ff;
+    urgent       : #ff5555ff;
+
+    background-color:            transparent;
+    text-color:                  @fg;
+
+    font: "JetBrainsMono Nerd Font 12";
+}
+
+window {
+    background-color:            @bg;
+    border:                      2px;
+    border-color:                @accent;
+    border-radius:                0px;
+    width:                        600px;
+    location:                    center;
+    x-offset:                    0px;
+    y-offset:                    0px;
+}
+
+mainbox {
+    background-color:            transparent;
+    children:                    [ "inputbar", "message", "listview" ];
+    spacing:                      10px;
+    padding:                      12px;
+}
+
+inputbar {
+    background-color:            @bg-alt;
+    text-color:                  @fg;
+    border-radius:                0px;
+    padding:                      10px 12px;
+    spacing:                      8px;
+    children:                    [ "prompt", "entry" ];
+}
+
+prompt {
+    background-color:            transparent;
+    text-color:                  @accent-alt;
+    font:                        "JetBrainsMono Nerd Font Bold 12";
+}
+
+entry {
+    background-color:            transparent;
+    text-color:                  @fg;
+    placeholder:                 "Search...";
+    placeholder-color:           @fg-alt;
+    cursor:                       text;
+}
+
+message {
+    background-color:            @bg-alt;
+    text-color:                  @fg;
+    border-radius:                0px;
+    padding:                      8px 12px;
+}
+
+listview {
+    background-color:            transparent;
+    columns:                      1;
+    lines:                        8;
+    spacing:                      4px;
+    cycle:                        true;
+    dynamic:                      true;
+    scrollbar:                    false;
+}
+
+element {
+    background-color:            transparent;
+    text-color:                  @fg;
+    border-radius:                0px;
+    padding:                      8px 10px;
+    spacing:                      8px;
+    orientation:                  horizontal;
+}
+
+element normal.normal {
+    background-color:            transparent;
+    text-color:                  @fg;
+}
+
+element selected.normal {
+    background-color:            @bg-selected;
+    text-color:                  @accent-alt;
+    border:                      0px 0px 0px 3px;
+    border-color:                 @accent;
+}
+
+element alternate.normal {
+    background-color:            transparent;
+    text-color:                  @fg;
+}
+
+element-icon {
+    size:                         22px;
+    vertical-align:               0.5;
+}
+
+element-text {
+    text-color:                   inherit;
+    vertical-align:               0.5;
+}
