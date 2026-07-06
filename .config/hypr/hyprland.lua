@@ -30,6 +30,7 @@ local menu        = "rofi -show drun"
 hl.on("hyprland.start", function()
     hl.dispatch(hl.dsp.exec_cmd("waybar"))
     hl.dispatch(hl.dsp.exec_cmd("swaybg -c 000000"))
+    hl.dispatch(hl.dsp.exec_cmd("/usr/lib/hyprpolkitagent/hyprpolkitagent"))
 end)
 
 -- ENVIRONMENT VARIABLES --
@@ -179,11 +180,10 @@ hl.bind(mainMod .. " + right", hl.dsp.focus({ direction = "right" }))
 hl.bind(mainMod .. " + up",    hl.dsp.focus({ direction = "up" }))
 hl.bind(mainMod .. " + down",  hl.dsp.focus({ direction = "down" }))
 
--- Switch workspaces with mainMod + [0-9] (workspace 6 is bound to key 0)
-for i = 1, 6 do
-    local key = i % 6
-    hl.bind(mainMod .. " + " .. key,         hl.dsp.focus({ workspace = i }))
-    hl.bind(mainMod .. " + SHIFT + " .. key, hl.dsp.window.move({ workspace = i }))
+-- Switch workspaces with mainMod + [1-3]
+for i = 1, 3 do
+    hl.bind(mainMod .. " + " .. i,         hl.dsp.focus({ workspace = i }))
+    hl.bind(mainMod .. " + SHIFT + " .. i, hl.dsp.window.move({ workspace = i }))
 end
 
 -- Move/resize windows with mainMod + LMB/RMB and dragging
@@ -213,6 +213,20 @@ local suppressMaximizeRule = hl.window_rule({
     suppress_event = "maximize",
 })
 -- suppressMaximizeRule:set_enabled(false)
+
+hl.window_rule({
+    name  = "steam-workspace",
+    match = { class = "^(steam)$" },
+
+    workspace = "2 silent",
+})
+
+hl.window_rule({
+    name  = "discord-workspace",
+    match = { class = "^(discord)$" },
+
+    workspace = "3 silent",
+})
 
 hl.window_rule({
     name  = "fix-xwayland-drags",
