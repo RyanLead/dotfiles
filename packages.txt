@@ -1,0 +1,42 @@
+# Packages required to reproduce this dotfiles setup on a fresh Arch/CachyOS install.
+# Installed with: pacman -S --needed - < packages.txt
+# (blank lines and comments are stripped by install.sh)
+
+# Compositor / desktop
+hyprland
+hyprtoolkit
+hyprpolkitagent
+xdg-desktop-portal-hyprland
+polkit
+waybar
+swaybg
+rofi
+
+# Terminal / shell
+kitty
+fish
+fisher
+neovim
+
+# Notifications / screenshots
+mako
+grim
+slurp
+swappy
+wl-clipboard
+libnotify
+
+# Audio / media keys
+wireplumber
+pavucontrol
+playerctl
+
+# Misc utilities
+fastfetch
+easyeffects
+pacman-contrib
+ttf-jetbrains-mono-nerd
+
+# AUR helper (available directly on CachyOS repos; on vanilla Arch, bootstrap
+# manually first - see README)
+paru
