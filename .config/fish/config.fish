@@ -1,3 +1,12 @@
+set -g fish_greeting
+
+if status is-login
+    and test (tty) = /dev/tty1
+    and not set -q WAYLAND_DISPLAY
+    and not set -q DISPLAY
+    exec start-hyprland
+end
+
 if status is-interactive
     fastfetch
 
@@ -29,4 +38,6 @@ set -gx EDITOR nvim
 set -gx VISUAL nvim
 set -gx TERM xterm-kitty
 
-starship init fish | source
+if type -q starship
+    starship init fish | source
+end

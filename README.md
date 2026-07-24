@@ -25,7 +25,13 @@ After it finishes:
 - Restart your shell (or re-login) so fish picks up `config.fish`
 - Run `fisher update` to pull down fish plugin sources
 - Open `nvim` once to let `lazy.nvim` bootstrap plugins
+- Run `~/scripts/fast-boot-hyprland.sh` yourself in a real terminal (needs interactive sudo) —
+  shortens the Limine timeout, enables tty1 autologin, and sets fish as the login shell so it
+  auto-execs Hyprland on tty1
 - Log into Hyprland — waybar/mako/swaybg/hyprpolkitagent autostart from `hyprland.lua`
+
+`config.fish` launches Hyprland via `start-hyprland` (its watchdog wrapper), not the raw
+`Hyprland` binary directly — launching the raw binary prints a warning that it's discouraged.
 
 ## Notes
 
