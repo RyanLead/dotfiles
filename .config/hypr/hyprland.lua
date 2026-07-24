@@ -204,8 +204,8 @@ hl.bind("XF86AudioPlay",  hl.dsp.exec_cmd("playerctl play-pause"), { locked = tr
 hl.bind("XF86AudioPrev",  hl.dsp.exec_cmd("playerctl previous"),   { locked = true })
 
 -- Screenshots
-hl.bind("ALT + HOME",         hl.dsp.exec_cmd("bash ~/.config/hypr/scripts/screenshot-region.sh"))
-hl.bind("SHIFT + ALT + HOME", hl.dsp.exec_cmd("bash ~/.config/hypr/scripts/screenshot-full.sh"))
+hl.bind(mainMod .. " + PRINT",         hl.dsp.exec_cmd("bash ~/.config/hypr/scripts/screenshot-region.sh"))
+hl.bind(mainMod .. " + SHIFT + PRINT", hl.dsp.exec_cmd("bash ~/.config/hypr/scripts/screenshot-full.sh"))
 
 -- WINDOWS AND WORKSPACES --
 
