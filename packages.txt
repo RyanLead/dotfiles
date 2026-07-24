@@ -17,6 +17,10 @@ kitty
 fish
 fisher
 neovim
+starship
+eza
+bat
+ripgrep
 
 # Notifications / screenshots
 mako
