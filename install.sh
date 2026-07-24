@@ -34,6 +34,12 @@ if ! dotfiles checkout; then
     dotfiles checkout
 fi
 
+echo "==> Enabling multilib (needed for lib32-* gaming packages)"
+if ! grep -q '^\[multilib\]' /etc/pacman.conf; then
+    sudo sed -i '/^#\[multilib\]/,/^#Include/ s/^#//' /etc/pacman.conf
+    sudo pacman -Sy
+fi
+
 echo "==> Installing packages (requires sudo)"
 grep -vE '^\s*#|^\s*$' "$HOME/packages.txt" | grep -v '^paru$' | sudo pacman -S --needed -
 

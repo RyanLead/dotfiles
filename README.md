@@ -37,6 +37,10 @@ After it finishes:
 
 - `hyprland.lua` hardcodes the monitor (`DP-1 @ 3840x2160@240`) — update the `hl.monitor({...})`
   block for different hardware.
+- `packages.txt`'s gaming section (Steam, GameMode, MangoHud, Vulkan stack) targets AMD GPUs
+  (RDNA4/RX 9070 XT, `amdgpu` driver). On different hardware, swap `vulkan-radeon`/`lib32-vulkan-radeon`
+  for the matching driver (e.g. `nvidia`/`nvidia-utils`/`lib32-nvidia-utils`, or `vulkan-intel`).
+  `install.sh` enables the `[multilib]` repo automatically since the `lib32-*` packages need it.
 - Ongoing edits: use the `dotfiles` fish function (`git --git-dir=$HOME/.dotfiles
   --work-tree=$HOME ...`). Never `dotfiles add -A` / `add .` — the work-tree is your whole home
   directory, so a blanket add will try to stage caches and other junk. Add files by explicit path.

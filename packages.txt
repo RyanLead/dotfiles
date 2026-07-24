@@ -37,6 +37,24 @@ easyeffects
 pacman-contrib
 ttf-jetbrains-mono-nerd
 
+# Gaming (AMD GPU - RDNA4/RX 9070 XT). Requires multilib enabled for lib32-*,
+# see install.sh.
+vulkan-radeon
+lib32-vulkan-radeon
+vulkan-icd-loader
+lib32-vulkan-icd-loader
+vulkan-mesa-implicit-layers
+lib32-vulkan-mesa-implicit-layers
+vulkan-tools
+mesa
+lib32-mesa
+gamemode
+lib32-gamemode
+mangohud
+lib32-mangohud
+steam
+steam-devices
+
 # AUR helper (available directly on CachyOS repos; on vanilla Arch, bootstrap
 # manually first - see README)
 paru
